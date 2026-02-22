@@ -6,14 +6,17 @@ public class ErrorsEnum
     enum Error { FP_ROUNDING, FP_OVERFLOW, FP_UNDERFLOW, INT_OVERFLOW }
 
     enum Result { A_BIT_DIFFERENT, INFINITY, ZERO, VERY_DIFFERENT }
+    // each error maps to a result (rounding - a bit different, overflow - infinity, etc.)
     
+    // e extends Enum - an enum type (Eg: Error, Result, could be other too). Works for any enum
     private static <E extends Enum<E>> E getEnumElement(String elementTypeName, Class<E> elementType)
     {
         boolean haveResult = false;
         E result = null;
         Scanner stdin = new Scanner(System.in);
         
-        while ( ! haveResult )
+        while ( ! haveResult ) 
+            // keeps asking until the input is valid
         {
             System.out.print("Input " + elementTypeName + ": ");
             try

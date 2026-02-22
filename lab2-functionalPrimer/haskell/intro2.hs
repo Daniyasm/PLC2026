@@ -3,7 +3,8 @@ module Intro2 where
 -- String algebra:
 name = "Alice"
 -- "if" has a special syntax but otherwise a typed version of Lisp's "if":
-name2 = if name /= "" then name else "no name"
+name2 = if name /= "" then name else "no name" 
+-- /= means !=
 
 pname3 = print "Bob"
 

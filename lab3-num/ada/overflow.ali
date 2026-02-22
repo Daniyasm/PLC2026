@@ -1,0 +1,96 @@
+V "GNAT Lib v8"
+M P W=b
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U overflow%b		overflow.adb		4b059e41 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W text_io%s		text_io.ads		text_io.ali
+
+D ada.ads		20170911084841 76789da1 ada%s
+D a-except.ads		20180111085525 291912d5 ada.exceptions%s
+D a-flteio.ads		20170908151217 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20170908151217 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20170908151217 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20180111085525 119b8fb3 ada.streams%s
+D a-tags.ads		20180111085525 491b781d ada.tags%s
+D a-textio.ads		20180111085525 881db35a ada.text_io%s
+D a-tiflio.ads		20180111085525 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20180111085525 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170908151217 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20180111085525 5ab55268 interfaces%s
+D i-cstrea.ads		20180111085525 e53d8b8e interfaces.c_streams%s
+D overflow.adb		20260121112911 7d7698dd overflow%b
+D system.ads		20180111085525 4635ec04 system%s
+D s-crtl.ads		20180111085525 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180111085525 54135002 system.exception_table%s
+D s-ficobl.ads		20180111085525 078245e4 system.file_control_block%s
+D s-parame.ads		20180111085525 f896c45c system.parameters%s
+D s-secsta.ads		20180111085525 283dec34 system.secondary_stack%s
+D s-soflin.ads		20180111085525 a7318a92 system.soft_links%s
+D s-stache.ads		20180111085525 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180111085525 09bd3940 system.standard_library%s
+D s-stoele.ads		20180111085525 2dc34a04 system.storage_elements%s
+D s-traent.ads		20180111085525 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180111085525 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20180111085525 1b7d22d2 system.wch_con%s
+D text_io.ads		20170908151217 21b2c898 text_io%s
+X 1 ada.ads
+16K9*Ada 20e8 14|1r6 2r5 3r6 4r5
+X 3 a-flteio.ads
+20K13*Float_Text_IO[9|46] 14|3w10 4r9
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[10|46] 14|1w10 2r9
+X 8 a-textio.ads
+242U14*Put 14|18s13 19s13 20s13 74s24
+249U14*Get_Line 14|22s17
+263U14*Put_Line 14|26s17
+298X4*Data_Error 14|25r28
+X 9 a-tiflio.ads
+68U14*Put 14|71s19[3|20] 73s19[3|20]
+X 10 a-tiinio.ads
+66U14*Put 14|72s19[4|18]
+71U14*Get 14|23s17[4|18]
+X 14 overflow.adb
+8U11*Overflow 8b11 76l5 76t13
+10V14 GetPositiveInteger{positive} 10b14 10>33 30l9 30t27 67s10 68s10 69s10
+10a33 varName{string} 19r17
+11i9 Result{positive} 23m28 29r16
+12b9 HaveResult{boolean} 17r19 24m17
+13a9 Input{string} 22m26 23r21
+14i9 Last{natural} 22m33 23m36
+32I13 My_Num1{integer}
+33I10 My_Num2<integer> 35r60 36r14 39r24
+35V14 Power{33I10} 35b14 35>20 35>37 42l9 42t14 72s31
+35i20 N{positive} 39r32
+35i37 M{natural} 38r23
+36i9 ns{33I10} 39m13 39r19 41r16
+38i13 I{integer}
+44V14 Power_FP{float} 44b14 44>23 44>37 51l9 51t17 71s23
+44f23 N{float} 48r24
+44i37 M{natural} 47r23
+45f9 ns{float} 48m13 48r19 50r16
+47i13 I{integer}
+53V14 Geom_FP{float} 53b14 53>22 53>36 62l9 62t16 73s23
+53f22 N{float} 58r32
+53i36 M{natural} 57r23
+54f9 geom_sum{float} 59m13 59r25 61r16
+55f9 ns_inv{float} 58m13 58r23 59r36
+57i13 I{integer}
+64i5 N{positive} 67m5 71r38 72r37 73r37
+64i7 M{positive} 68m5 71r41 72r39 73r40
+64i9 T{positive} 69m5 70r10
+X 28 text_io.ads
+24K9*Text_IO=24:29 14|5w6 6r5
+

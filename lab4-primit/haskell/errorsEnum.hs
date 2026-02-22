@@ -1,4 +1,4 @@
-module Main where
+module Main where -- similar to Java main method
 
 import System.IO (hSetBuffering, stdout, BufferMode(..))
 
@@ -6,7 +6,7 @@ main =
     do
     initialiseIO
     putStrLn ("known errors = " ++ show allErrors)
-    error <- getElement "error"
+    error <- getElement "error" -- java equivalent of : Error error = getElement("error");
     putStrLn (show error ++ " results in: " ++ show (error2Result error))
     
 initialiseIO =
@@ -14,7 +14,7 @@ initialiseIO =
     hSetBuffering stdout NoBuffering
         -- ensure any console output is shown asap
 
-data Error = FP_Rounding | FP_Overflow | FP_Underflow | Int_Overflow
+data Error = FP_Rounding | FP_Overflow | FP_Underflow | Int_Overflow -- enum 
     deriving (Show, -- default formatting
               Read, -- default parsing
               Eq,   -- default equality testing
@@ -30,6 +30,7 @@ data Result = Zero | Infinity | ABitDifferent | VeryDifferent
 allErrors :: [Error] -- ie it is a list of PL elements
 allErrors = [minBound .. maxBound]
 
+-- similar to Java's switch
 error2Result FP_Rounding = ABitDifferent
 error2Result FP_Overflow = Infinity
 error2Result FP_Underflow = Zero
@@ -52,13 +53,13 @@ getElement elementTypeName =
             do
             return element
          Nothing -> 
-            do
+            do -- replaces java null and is much safer
             putStrLn ("Invalid " ++ elementTypeName ++ ", try again")
             getElement elementTypeName -- try again - using recursion
 
 parseElement line =
-    case reads line of
-        [] -> -- no valid interpretation of the line as an element ([] = the empty list)
+    case reads line of -- parsing 
+        [] -> -- no valid interpretation of the line as an element ([] = the empty list) -> if the parsing fails
             Nothing
         -- [pattern 2:]
         ((e,_) : _) -> -- found at least one interpretation, call it "e"

@@ -9,16 +9,16 @@ typedef struct { int d; int y; }  DYDate;
 
 typedef union
 {
-    DMYDate dmyDate;
+    DMYDate dmyDate; 
     DYDate dyDate;
-} DateUnion;
+} DateUnion; // the variants are binded together
 
-typedef enum {DMY, DY} DateVariant;
+typedef enum {DMY, DY} DateVariant; // to ensure type safety
 
 typedef struct
 {
-    DateVariant variant;
-    DateUnion content;
+    DateVariant variant; // the "discriminant" -- but just a regular field
+    DateUnion content; // this is where the actual data is 
 } Date;
 
 
